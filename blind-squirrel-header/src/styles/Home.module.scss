@@ -1,0 +1,132 @@
+@import "variables";
+
+.header {
+  z-index: 9999;
+  position: fixed;
+  background-color: transparent;
+  inset: 0 0 90% 0;
+  .navContainer {
+    @media (min-width: 800px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navInner {
+      width: $global-width;
+      margin: 0 auto;
+      @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .navLogo {
+        max-width: 100px;
+        max-height: 100px;
+        margin: 0 auto;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .navLinksContainer {
+        a {
+          all: unset;
+        }
+      }
+      .navMobileContainer {
+        display: flex;
+        align-items: center;
+        background-color: white;
+
+        position: relative;
+        z-index: 888;
+        .navBurgerContainer {
+          @media (min-width: 768px) {
+            display: none;
+          }
+          .navBurgerAnimate {
+            transition: $global-transition;
+            .navBurgerButton {
+              all: unset;
+              cursor: pointer;
+              .navBurger {
+                transform: rotate(90deg) translateX(8px);
+                background-color: $burnt-green;
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+      }
+      @media (max-width: 768px) {
+        .navIsOpen,
+        .navIsClosed {
+          transition: $global-transition;
+          height: 100vh;
+          .navLinksContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            a {
+              padding: 1em 0;
+            }
+          }
+        }
+        .navIsClosed {
+          transform: translateX(-120%);
+        }
+        .navIsOpen {
+          position: relative;
+          transform: translateX(0);
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+.homeHeroContainer {
+  background-color: white;
+  margin: 3em 0;
+  @media (min-width: 768px) {
+    margin: 4em 0;
+  }
+  .homeHeroInner {
+    width: $global-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    .homeHeroSmallText {
+      p {
+        color: $sandstone;
+      }
+    }
+    .homeHeroHeadingImage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      h1 {
+        margin-right: -3em;
+        z-index: 100;
+        span {
+          display: block;
+        }
+      }
+      .homeHeroImage {
+        max-width: 400px;
+        max-height: 350px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .homeHeroButtonContainer {
+      align-self: flex-end;
+    }
+  }
+}
