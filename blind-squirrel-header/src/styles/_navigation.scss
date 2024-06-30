@@ -1,0 +1,158 @@
+.header {
+  z-index: 999;
+  position: fixed;
+  background-color: transparent;
+  inset: 0 0 90% 0;
+  .navContainer {
+    @media (min-width: 800px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navInner {
+      @media (min-width: 768px) {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .navLogo {
+        max-width: 150px;
+        max-height: 150px;
+        margin: 0.5em 0;
+        animation: slideDown 500ms ease-in-out forwards;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .navLinksContainer {
+        animation: slideDown 500ms ease-in-out forwards;
+
+        a {
+          all: unset;
+          transition: $global-transition;
+          color: $primary-font-color;
+          margin: 1em auto 0;
+          padding: 0 0 0.5em;
+          cursor: pointer;
+          @include primaryFont;
+          border-bottom: solid 2px transparent;
+          font-size: 1.5rem;
+
+          @media (min-width: 768px) {
+            border-radius: 30px;
+            padding: 0.5em 1.5em;
+            border: none;
+            font-size: 0.9rem;
+          }
+          &:hover,
+          &:focus {
+            border-bottom: solid 2px $sandstone;
+            @media (min-width: 768px) {
+              background-color: $sandstone;
+              color: white;
+              border: none;
+            }
+          }
+        }
+      }
+      .navMobileContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent;
+        position: relative;
+        z-index: 998;
+        padding: 0.5em 1em;
+        overflow: hidden;
+        @media (min-width: 768px) {
+          padding: 0;
+        }
+        .navBurgerContainer {
+          display: block;
+          position: relative;
+          margin: 0.5em 0;
+          order: 2;
+          animation: slideDown 600ms ease-in-out forwards;
+          .navBurgerButton {
+            all: unset;
+            cursor: pointer;
+            background-color: $sandstone;
+            border-radius: 50%;
+            padding: 1.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .navBurger,
+            .navBurger::before,
+            .navBurger::after {
+              width: 1.5em;
+              height: 2px;
+              background-color: white;
+              transition: $global-transition;
+              position: absolute;
+              content: "";
+
+              border-radius: 5px;
+            }
+            .navBurger::after {
+              bottom: 8px;
+            }
+            .navBurger::before {
+              top: 8px;
+            }
+          }
+          @media (min-width: 768px) {
+            display: none;
+          }
+        }
+        .navBurgerAnimate {
+          transition: $global-transition;
+
+          .navBurgerButton {
+            .navBurger {
+              transform: rotate(45deg) translateX(0px);
+              background-color: white;
+              border-radius: 5px;
+            }
+            .navBurger::before {
+              opacity: 0;
+            }
+            .navBurger::after {
+              transform: rotate(90deg) translateX(8px);
+              background-color: white;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+      @media (max-width: 768px) {
+        .navIsOpen,
+        .navIsClosed {
+          transition: $global-transition;
+          height: 100vh;
+          .navLinksContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+          }
+        }
+        .navIsClosed {
+          transform: translateX(-120%);
+          height: 0vh;
+        }
+        .navIsOpen {
+          position: relative;
+          transform: translateX(0);
+          background-color: white;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 //general
 $global-transition: all 350ms ease-in-out;
-$global-width: min(1100px, 95%);
+$slow-transition: all 800ms ease-in-out;
+$global-width: min(1200px, 95%);
 
 // colors
 $oat: #f4f0ed;
@@ -10,7 +11,8 @@ $burnt-green: #0c1710;
 $earthenware: #d84a31;
 $oak-leaf: #79ac2c;
 $moss: #52772c;
+$white: #fff;
 
-//font-sizes
-
+//font
+$primary-font-color: #1f2c24;
 //padding and margin
