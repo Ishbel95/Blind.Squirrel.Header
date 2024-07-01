@@ -35,7 +35,7 @@ export default function Nav() {
     count === 100 &&
       setTimeout(() => {
         setShowNav(true);
-      }, 800);
+      }, 700);
   }, [count]);
 
   return (
@@ -49,8 +49,8 @@ export default function Nav() {
                   <Image
                     src={logo}
                     alt="blind squirrel games logo"
-                    width={150}
-                    height={150}
+                    height={0}
+                    width={0}
                   />
                 </Link>
               </div>

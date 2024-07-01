@@ -26,8 +26,8 @@ export default function HomeHero() {
               <Image
                 src={HeroImage}
                 alt="god of thor at ragnarok"
-                width={630}
-                height={320}
+                height={0}
+                width={0}
               />
             </div>{" "}
             <div className={styles.homeHeroButtonContainer}>
@@ -40,11 +40,11 @@ export default function HomeHero() {
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.homeHeroBottomButtonContainer}>
-        <Link href="/" title="home" aria-label="home">
-          <i class="fa-solid fa-arrow-right"></i>
-        </Link>
+        <div className={styles.homeHeroBottomButtonContainer}>
+          <Link href="/" title="home" aria-label="home">
+            <i class="fa-solid fa-arrow-right"></i>
+          </Link>
+        </div>
       </div>
     </div>
   );

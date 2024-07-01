@@ -14,7 +14,7 @@ export default function Home() {
     count === 100 &&
       setTimeout(() => {
         setShowHero(true);
-      }, 800);
+      }, 700);
   }, [count]);
 
   return (
