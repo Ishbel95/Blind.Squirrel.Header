@@ -8,15 +8,24 @@
 }
 
 @mixin smallfont {
-  font-size: 0.7rem;
-  @media (min-width: 768px) {
-    font-size: 0.8rem;
-  }
+  font-size: 0.8rem;
 }
 
 @mixin buttonFontSize {
   font-size: 1.6rem;
   @media (min-width: 768px) {
     font-size: 1.7rem;
+  }
+}
+
+@mixin primaryButton {
+  border-radius: 30px;
+  border: solid 1px $sandstone;
+  color: $sandstone;
+  transition: $global-transition;
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $sandstone;
   }
 }

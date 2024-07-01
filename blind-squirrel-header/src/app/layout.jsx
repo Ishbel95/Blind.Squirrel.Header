@@ -1,4 +1,3 @@
-import styles from "@components/styles/Home.module.scss";
 import Nav from "@components/components/Nav";
 import LayoutWrapper from "@components/components/LayoutWrapper";
 import "@components/styles/globals.css";
@@ -13,8 +12,12 @@ export default function RootLayout({ children }) {
       <head>
         <script
           src="https://kit.fontawesome.com/d5e576d269.js"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
       </head>
       <body>
         <LayoutWrapper>

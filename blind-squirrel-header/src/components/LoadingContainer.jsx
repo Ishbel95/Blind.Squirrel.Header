@@ -1,17 +1,21 @@
 "use client";
 import CountContext from "@components/context/CountContext";
-import styles from "@components/styles/Home.module.scss";
-import { useContext, useEffect } from "react";
+import {
+  homeHeroLoadingContainer,
+  homeHeroLoadingContainerMove,
+  homeHeroLoad,
+} from "@components/styles/Home.module.scss";
+import { useContext } from "react";
 export default function LoadingContainer() {
-  const { count, setCount } = useContext(CountContext);
+  const { count } = useContext(CountContext);
 
   return (
     <div
-      className={`${styles.homeHeroLoadingContainer} ${
-        count === 100 && styles.homeHeroLoadingContainerMove
+      className={`${homeHeroLoadingContainer} ${
+        count === 100 && homeHeroLoadingContainerMove
       }`}
     >
-      <div className={styles.homeHeroLoad}>
+      <div className={homeHeroLoad}>
         <p>{count}%</p>
       </div>
     </div>

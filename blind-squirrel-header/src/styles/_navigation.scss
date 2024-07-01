@@ -11,7 +11,7 @@
     }
     .navInner {
       @media (min-width: 768px) {
-        width: 95%;
+        width: $global-width;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -130,9 +130,9 @@
           }
         }
       }
-      @media (max-width: 768px) {
-        .navIsOpen,
-        .navIsClosed {
+      @media (max-width: 767px) {
+        .navOpen,
+        .navClosed {
           transition: $global-transition;
           height: 100vh;
           .navLinksContainer {
@@ -143,11 +143,11 @@
             overflow: hidden;
           }
         }
-        .navIsClosed {
+        .navClosed {
           transform: translateX(-120%);
           height: 0vh;
         }
-        .navIsOpen {
+        .navOpen {
           position: relative;
           transform: translateX(0);
           background-color: white;

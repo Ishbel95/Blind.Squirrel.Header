@@ -6,6 +6,7 @@ import CountContext from "@components/context/CountContext";
 export default function Home() {
   const [showHero, setShowHero] = useState();
   const { count, setCount } = useContext(CountContext);
+
   useEffect(() => {
     count < 100 &&
       setTimeout(() => {

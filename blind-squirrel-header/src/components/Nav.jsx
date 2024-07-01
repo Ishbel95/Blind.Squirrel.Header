@@ -2,7 +2,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@components/images/logo.png";
-import styles from "@components/styles/Home.module.scss";
+import {
+  header,
+  navContainer,
+  navInner,
+  navMobileContainer,
+  navLogo,
+  navBurgerContainer,
+  navBurgerAnimate,
+  navBurgerButton,
+  navBurger,
+  navClosed,
+  navOpen,
+  navLinksContainer,
+} from "@components/styles/Home.module.scss";
 import { useState, useContext, useEffect } from "react";
 import CountContext from "@components/context/CountContext";
 export default function Nav() {
@@ -40,11 +53,11 @@ export default function Nav() {
 
   return (
     showNav && (
-      <header className={styles.header}>
-        <nav className={styles.navContainer}>
-          <div className={styles.navInner}>
-            <div className={styles.navMobileContainer}>
-              <div className={styles.navLogo}>
+      <header className={header}>
+        <nav className={navContainer}>
+          <div className={navInner}>
+            <div className={navMobileContainer}>
+              <div className={navLogo}>
                 <Link href="/" onClick={() => setNavIsOpen(false)}>
                   <Image
                     src={logo}
@@ -55,22 +68,20 @@ export default function Nav() {
                 </Link>
               </div>
               <div
-                className={`${styles.navBurgerContainer} ${
-                  navIsOpen && styles.navBurgerAnimate
+                className={`${navBurgerContainer} ${
+                  navIsOpen && navBurgerAnimate
                 }`}
               >
                 <button
-                  className={styles.navBurgerButton}
+                  className={navBurgerButton}
                   onClick={() => setNavIsOpen(!navIsOpen)}
                 >
-                  <span className={styles.navBurger}></span>
+                  <span className={navBurger}></span>
                 </button>
               </div>
             </div>
-            <div
-              className={`${navIsOpen ? styles.navIsOpen : styles.navIsClosed}`}
-            >
-              <div className={styles.navLinksContainer}>
+            <div className={`${navIsOpen ? navOpen : navClosed}`}>
+              <div className={navLinksContainer}>
                 {navData.map(({ href, text }, index) => {
                   return (
                     <Link
