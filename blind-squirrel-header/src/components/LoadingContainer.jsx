@@ -5,9 +5,16 @@ import {
   homeHeroLoadingContainerMove,
   homeHeroLoad,
 } from "@components/styles/Home.module.scss";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 export default function LoadingContainer() {
-  const { count } = useContext(CountContext);
+  const { count, setCount } = useContext(CountContext);
+
+  useEffect(() => {
+    count < 100 &&
+      setTimeout(() => {
+        setCount(count + 1);
+      }, 40);
+  }, [count]);
 
   return (
     <div

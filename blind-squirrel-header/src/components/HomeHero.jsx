@@ -39,7 +39,7 @@ export default function HomeHero() {
               <div className={homeHeroImageOverlay}></div>
               <Image
                 src={HeroImage}
-                alt="god of thor at ragnarok"
+                alt="god of war ragnarok"
                 height={0}
                 width={0}
                 priority
